@@ -38,6 +38,8 @@
   <ItemGroup>
      <Compile Include="Assets/Scripts/Movement.cs" />
      <Compile Include="Assets/Scripts/CollisionHandler.cs" />
+     <Compile Include="Assets/Scripts/Oscillator.cs" />
+     <Compile Include="Assets/Scripts/QuitApplication.cs" />
     <Reference Include="UnityEngine">
         <HintPath>/Applications/Unity/Hub/Editor/2021.3.24f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
@@ -724,6 +726,12 @@
     </Reference>
     <Reference Include="Unity.EditorCoroutines.Editor">
         <HintPath>/Users/dankidon/CookieCoEatingAdventures/Library/ScriptAssemblies/Unity.EditorCoroutines.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="com.unity.cinemachine.editor">
+        <HintPath>/Users/dankidon/CookieCoEatingAdventures/Library/ScriptAssemblies/com.unity.cinemachine.editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Cinemachine">
+        <HintPath>/Users/dankidon/CookieCoEatingAdventures/Library/ScriptAssemblies/Cinemachine.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
