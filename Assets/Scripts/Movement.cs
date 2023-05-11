@@ -9,6 +9,11 @@ public class Movement : MonoBehaviour
     [SerializeField] float mainThrust = 1000f;
     [SerializeField] float rotationThrust = 100f;
     [SerializeField] AudioClip cookieNoises;
+    [SerializeField] ParticleSystem superParticle;
+    [SerializeField] ParticleSystem lefthandParticle;
+    [SerializeField] ParticleSystem righthandParticle;
+    [SerializeField] ParticleSystem leftlegParticle;
+    [SerializeField] ParticleSystem rightlegParticle;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,16 +32,11 @@ public class Movement : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Space))
         {
-            //Debug.Log("Pressed SPACE - Thrusting");
-            cookieRigidBody.AddRelativeForce(Vector3.up * mainThrust * Time.deltaTime);
-            if(!cookiecooSound.isPlaying)
-            {
-                cookiecooSound.PlayOneShot(cookieNoises);
-            }
+            StartThrusting();
         }
         else
         {
-            cookiecooSound.Stop();
+            StopThrusting();
         }
     }
 
@@ -44,14 +44,63 @@ public class Movement : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.A))
         {
-            ApplyRotation(Vector3.forward);
-            //Debug.Log("Pressed A - Rotating Left");
+            RotateLeft();
         }
         else if (Input.GetKey(KeyCode.D))
         {
-            ApplyRotation(Vector3.back);
-            //Debug.Log("Pressed D - Rotating Right");
+            RotateRight();
         }
+        else
+        {
+            StopRotating();
+        }
+    }
+
+    void StartThrusting()
+    {
+        cookieRigidBody.AddRelativeForce(Vector3.up * mainThrust * Time.deltaTime);
+        if (!cookiecooSound.isPlaying)
+        {
+            cookiecooSound.PlayOneShot(cookieNoises);
+        }
+        if (!superParticle.isPlaying)
+        {
+            superParticle.Play();
+        }
+    }
+
+    void StopThrusting()
+    {
+        cookiecooSound.Stop();
+        superParticle.Stop();
+    }
+
+    void RotateLeft()
+    {
+        ApplyRotation(Vector3.forward);
+        if (!lefthandParticle.isPlaying && !righthandParticle.isPlaying)
+        {
+            lefthandParticle.Play();
+            righthandParticle.Play();
+        }
+    }
+
+    void RotateRight()
+    {
+        ApplyRotation(Vector3.back);
+        if (!leftlegParticle.isPlaying && !rightlegParticle.isPlaying)
+        {
+            leftlegParticle.Play();
+            rightlegParticle.Play();
+        }
+    }
+
+    void StopRotating()
+    {
+        leftlegParticle.Stop();
+        rightlegParticle.Stop();
+        lefthandParticle.Stop();
+        righthandParticle.Stop();
     }
 
     void ApplyRotation(Vector3 rotateDirection)

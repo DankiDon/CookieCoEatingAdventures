@@ -7,6 +7,8 @@ public class CollisionHandler : MonoBehaviour
     [SerializeField] AudioClip crashedcookieNoise;
     [SerializeField] AudioClip successfulcookieNoise;
     [SerializeField] AudioClip munchingcookieNoise;
+    [SerializeField] ParticleSystem successCookies;
+    [SerializeField] ParticleSystem crashCookies;
     AudioSource audioSource;
     bool isTransitioning = false;
 
@@ -62,6 +64,7 @@ public class CollisionHandler : MonoBehaviour
         isTransitioning = true;
         audioSource.Stop();
         audioSource.PlayOneShot(crashedcookieNoise);
+        crashCookies.Play();
         GetComponent<Movement>().enabled = false;
         Invoke("ReloadLevel",delay);
     }
@@ -71,6 +74,7 @@ public class CollisionHandler : MonoBehaviour
         isTransitioning = true;
         audioSource.Stop();
         audioSource.PlayOneShot(successfulcookieNoise);
+        successCookies.Play();
         GetComponent<Movement>().enabled = false;
         Invoke("LoadNextLevel",delay);
     }

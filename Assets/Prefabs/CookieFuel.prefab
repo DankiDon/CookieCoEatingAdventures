@@ -494,6 +494,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2061611811946561799}
+  - component: {fileID: 6434954710551917561}
   m_Layer: 0
   m_Name: CookieFuel
   m_TagString: Fuel
@@ -525,6 +526,14 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 5.383, y: -12.568, z: -0.945}
+--- !u!33 &6434954710551917561
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2329071093473951601}
+  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &4031126222996239605
 GameObject:
   m_ObjectHideFlags: 0
