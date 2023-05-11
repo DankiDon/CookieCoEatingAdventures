@@ -849,7 +849,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 479378bbcc5d04779954ef996bfac329, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -949,6 +949,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainThrust: 1000
   rotationThrust: 100
+  cookieNoises: {fileID: 8300000, guid: 479378bbcc5d04779954ef996bfac329, type: 3}
 --- !u!114 &15138812
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -961,6 +962,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd08061d50cbd45a495fb9b1dde43f8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  delay: 0.75
+  crashedcookieNoise: {fileID: 8300000, guid: 4aa02581a903b45df8709ba1325d19df, type: 3}
+  successfulcookieNoise: {fileID: 8300000, guid: a4da140b5e8ca4c6ea3afb9e91dc1ec0, type: 3}
+  munchingcookieNoise: {fileID: 8300000, guid: 8aa6ae2af40044f7eb9cb4b26c2c222a, type: 3}
 --- !u!1 &7627839476760926637
 GameObject:
   m_ObjectHideFlags: 0

@@ -123,23 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &15138806 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3676802618154233292, guid: d1ca442e62a714e6f8a27969d77147f6, type: 3}
-  m_PrefabInstance: {fileID: 496226162}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &15138812
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 15138806}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fd08061d50cbd45a495fb9b1dde43f8f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &251206702
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -150,10 +133,6 @@ PrefabInstance:
     - target: {fileID: 463858451528170117, guid: 5760fc5f8788d49a2b793585786bed93, type: 3}
       propertyPath: m_Name
       value: Landing Pad
-      objectReference: {fileID: 0}
-    - target: {fileID: 463858451528170117, guid: 5760fc5f8788d49a2b793585786bed93, type: 3}
-      propertyPath: m_TagString
-      value: Finish
       objectReference: {fileID: 0}
     - target: {fileID: 6685860529458559123, guid: 5760fc5f8788d49a2b793585786bed93, type: 3}
       propertyPath: m_RootOrder
@@ -208,21 +187,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 15138810, guid: d1ca442e62a714e6f8a27969d77147f6, type: 3}
-      propertyPath: Loop
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 15138810, guid: d1ca442e62a714e6f8a27969d77147f6, type: 3}
-      propertyPath: m_PlayOnAwake
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3676802618154233292, guid: d1ca442e62a714e6f8a27969d77147f6, type: 3}
       propertyPath: m_Name
       value: Player (Cookie Coo)
-      objectReference: {fileID: 0}
-    - target: {fileID: 3676802618154233292, guid: d1ca442e62a714e6f8a27969d77147f6, type: 3}
-      propertyPath: m_TagString
-      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 7418456058739085371, guid: d1ca442e62a714e6f8a27969d77147f6, type: 3}
       propertyPath: m_RootOrder
@@ -577,10 +544,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Obstacle
       objectReference: {fileID: 0}
-    - target: {fileID: 1580864295526676178, guid: ea60b16dccd494eeeadf88f529aa91b2, type: 3}
-      propertyPath: m_TagString
-      value: Untagged
-      objectReference: {fileID: 0}
     - target: {fileID: 1580864295526676182, guid: ea60b16dccd494eeeadf88f529aa91b2, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -634,26 +597,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1421974231197338620, guid: a4cf16e6751384c878e1db6f6b516752, type: 3}
-      propertyPath: m_TagString
-      value: Fuel
-      objectReference: {fileID: 0}
-    - target: {fileID: 1488598713211517617, guid: a4cf16e6751384c878e1db6f6b516752, type: 3}
-      propertyPath: m_TagString
-      value: Fuel
-      objectReference: {fileID: 0}
-    - target: {fileID: 1635041140147295769, guid: a4cf16e6751384c878e1db6f6b516752, type: 3}
-      propertyPath: m_TagString
-      value: Fuel
-      objectReference: {fileID: 0}
-    - target: {fileID: 1654501554088084432, guid: a4cf16e6751384c878e1db6f6b516752, type: 3}
-      propertyPath: m_TagString
-      value: Fuel
-      objectReference: {fileID: 0}
-    - target: {fileID: 1701081523155050388, guid: a4cf16e6751384c878e1db6f6b516752, type: 3}
-      propertyPath: m_TagString
-      value: Fuel
-      objectReference: {fileID: 0}
     - target: {fileID: 2061611811946561799, guid: a4cf16e6751384c878e1db6f6b516752, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -701,22 +644,6 @@ PrefabInstance:
     - target: {fileID: 2329071093473951601, guid: a4cf16e6751384c878e1db6f6b516752, type: 3}
       propertyPath: m_Name
       value: CookieFuel
-      objectReference: {fileID: 0}
-    - target: {fileID: 4031126222996239605, guid: a4cf16e6751384c878e1db6f6b516752, type: 3}
-      propertyPath: m_TagString
-      value: Fuel
-      objectReference: {fileID: 0}
-    - target: {fileID: 5079195178580449856, guid: a4cf16e6751384c878e1db6f6b516752, type: 3}
-      propertyPath: m_TagString
-      value: Fuel
-      objectReference: {fileID: 0}
-    - target: {fileID: 6361584884067527026, guid: a4cf16e6751384c878e1db6f6b516752, type: 3}
-      propertyPath: m_TagString
-      value: Fuel
-      objectReference: {fileID: 0}
-    - target: {fileID: 6386225564042463902, guid: a4cf16e6751384c878e1db6f6b516752, type: 3}
-      propertyPath: m_TagString
-      value: Fuel
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a4cf16e6751384c878e1db6f6b516752, type: 3}

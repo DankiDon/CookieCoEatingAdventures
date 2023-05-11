@@ -3,22 +3,38 @@ using UnityEngine.SceneManagement;
 
 public class CollisionHandler : MonoBehaviour
 {
+    [SerializeField] float delay = 0.75f;
+    [SerializeField] AudioClip crashedcookieNoise;
+    [SerializeField] AudioClip successfulcookieNoise;
+    [SerializeField] AudioClip munchingcookieNoise;
+    AudioSource audioSource;
+    bool isTransitioning = false;
+
+    void Start() 
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
     void OnCollisionEnter(Collision other) 
     {
+        if (isTransitioning)
+        {
+            return;
+        }
         switch (other.gameObject.tag)
         {
             case "Fuel":
+                //audioSource.PlayOneShot(munchingcookieNoise);
                 Debug.Log("CookieCoo has obtained a cookie");
                 break;
             case "Friendly":
                 Debug.Log("CookieCoo is touching a friendly object");
                 break;
             case "Finish":
-                LoadNextLevel();
+                SucessSequence();
                 Debug.Log("The CookieCoo game is done! Thanks for playing");
                 break;
             default:
-                ReloadLevel();
+                CrashSequence();
                 //Debug.Log("CookieCoo has blown up!");
                 break;
         }
@@ -39,5 +55,23 @@ public class CollisionHandler : MonoBehaviour
     {
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(currentSceneIndex);
+    }
+
+    void CrashSequence()
+    {
+        isTransitioning = true;
+        audioSource.Stop();
+        audioSource.PlayOneShot(crashedcookieNoise);
+        GetComponent<Movement>().enabled = false;
+        Invoke("ReloadLevel",delay);
+    }
+
+    void SucessSequence()
+    {
+        isTransitioning = true;
+        audioSource.Stop();
+        audioSource.PlayOneShot(successfulcookieNoise);
+        GetComponent<Movement>().enabled = false;
+        Invoke("LoadNextLevel",delay);
     }
 }

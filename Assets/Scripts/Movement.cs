@@ -8,6 +8,7 @@ public class Movement : MonoBehaviour
     AudioSource cookiecooSound;
     [SerializeField] float mainThrust = 1000f;
     [SerializeField] float rotationThrust = 100f;
+    [SerializeField] AudioClip cookieNoises;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,7 +31,7 @@ public class Movement : MonoBehaviour
             cookieRigidBody.AddRelativeForce(Vector3.up * mainThrust * Time.deltaTime);
             if(!cookiecooSound.isPlaying)
             {
-                cookiecooSound.Play();
+                cookiecooSound.PlayOneShot(cookieNoises);
             }
         }
         else
