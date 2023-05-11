@@ -11,14 +11,33 @@ public class CollisionHandler : MonoBehaviour
     [SerializeField] ParticleSystem crashCookies;
     AudioSource audioSource;
     bool isTransitioning = false;
+    bool isCollisionDisabled = false;
 
     void Start() 
     {
         audioSource = GetComponent<AudioSource>();
     }
+
+    void Update()
+    {
+        EnableCheatKeys();
+    }
+
+    void EnableCheatKeys()
+    {
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            LoadNextLevel();
+        }
+        else if (Input.GetKeyDown(KeyCode.C))
+        {
+            isCollisionDisabled = !isCollisionDisabled;
+        }
+    }
+
     void OnCollisionEnter(Collision other) 
     {
-        if (isTransitioning)
+        if (isTransitioning || isCollisionDisabled)
         {
             return;
         }
